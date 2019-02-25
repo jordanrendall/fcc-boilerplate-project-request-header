@@ -25,8 +25,13 @@ app.get("/api/hello", function (req, res) {
 });
 
 
+// your first API endpoint... 
+app.get("/api/whoami", function (req, res) {
+  res.json({greeting: 'whoami API'});
+});
+
 
 // listen for requests :)
-var listener = app.listen(process.env.PORT, function () {
+var listener = app.listen(process.env.PORT || 3015, function () {
   console.log('Your app is listening on port ' + listener.address().port);
 });
